@@ -5,10 +5,12 @@
 /**
  * Class ContentText
  *
- * Front end content element "text".
- * @copyright  ARTACK WebLab GmbH 2011
- * @author     Gabriel Novotny
- * @package    iframe content
+ * Front end content element "iframe".
+ * @copyright  Patrick Landolt 2011
+ * @author     Patrick Landolt <http://www.artack.ch>
+ * @package    iFrame
+ * @license    LGPL
+ * @filesource
  */
 class ContentArtIframe extends ContentElement
 {
@@ -19,22 +21,20 @@ class ContentArtIframe extends ContentElement
 	 */
 	protected $strTemplate = 'ce_iframe';
 
-
 	/**
 	 * Generate content element
 	 */
 	protected function compile()
 	{
 
-		$this->Template->title = $this->art_iframe_title;
+    $this->Template->title = $this->art_iframe_title;
     $this->Template->src = $this->art_iframe_src;
     $this->Template->width = unserialize($this->art_iframe_width);
     $this->Template->height = unserialize($this->art_iframe_height);
     $this->Template->longdesc = $this->art_iframe_longdesc;
     $this->Template->frameborder = $this->art_iframe_frameborder;
     $this->Template->scrolling = $this->art_iframe_scrolling;
-    
-		
+    		
 	}
 }
 

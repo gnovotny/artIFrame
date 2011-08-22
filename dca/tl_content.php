@@ -14,7 +14,7 @@
 /**
  * Add palettes to tl_content
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['iframe']='type,art_iframe_title,art_iframe_src,art_iframe_longdesc,art_iframe_width,art_iframe_height,art_iframe_align,art_iframe_frameborder,art_iframe_scrolling;guests,protected;space,cssID';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['iframe']='type,art_iframe_title,art_iframe_src,art_iframe_longdesc,art_iframe_width,art_iframe_height,art_iframe_frameborder,art_iframe_scrolling;guests,protected;space,cssID';
 
 
 /**
@@ -46,6 +46,7 @@ $fields = array
   ),
   'art_iframe_longdesc' => array
   (
+    'label'                   => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_longdesc'],
     'exclude'                 => true,
     'search'                  => true,
     'inputType'               => 'text',
@@ -76,24 +77,24 @@ $fields = array
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_frameborder'],
     'exclude'                 => true,
     'inputType'               => 'select',
-    'options'                 => array('1' => 'Ja', '0' => 'Nein'),
+    'options'                 => array
+                                 (
+                                  '1' => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_frameborder']['yes'],
+                                  '0' => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_frameborder']['no']
+                                 ),
     'eval'                    => array('tl_class'=>'w50')
   ),
-  /*
-  'art_iframe_align' => array
-  (
-    'label'                   => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_align'],
-    'exclude'                 => true,
-    'inputType'               => 'select',
-    'options'                 => array('middle' => 'Mitte', 'left' => 'Links', 'right' => 'Rechts')
-  ),
-   */
   'art_iframe_scrolling' => array
   (
     'label'                   => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_scrolling'],
     'exclude'                 => true,
     'inputType'               => 'select',
-    'options'                 => array('auto' => 'Automatisch', 'yes' => 'Immer', 'no' => 'Nie' ),
+    'options'                 => array
+                                 (
+                                  'auto' => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_scrolling']['auto'],
+                                  'yes'  => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_scrolling']['always'],
+                                  'no'   => &$GLOBALS['TL_LANG']['tl_content']['art_iframe_scrolling']['never']
+                                 ),
     'eval'                    => array('tl_class'=>'w50')
   ),
 );
